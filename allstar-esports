@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d0d0d">
+<title>ALLSTAR UNITED ESPORTS</title>
+<meta name="description" content="Official website of ALLSTAR UNITED ESPORTS. Rise Together, Fight Together, Win Together.">
+
+<style>
+:root {
+  --red: #e50914;
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --gray: #171717;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13,13,13,.95);
+  border-bottom: 1px solid #292929;
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  max-width: 1150px;
+  min-height: 72px;
+  margin: auto;
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+.hero {
+  min-height: 600px;
+  padding: 90px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 65%, #5b090f 0%, transparent 52%),
+    linear-gradient(180deg, #101010, #0d0d0d);
+  border-bottom: 1px solid #292929;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.tag {
+  color: #ff454d;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 22px 0 12px;
+  font-size: clamp(36px, 8vw, 76px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  color: #bcbcbc;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  background: var(--red);
+  border: 1px solid var(--red);
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: transparent;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 80px 22px;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-heading h2 {
+  font-size: clamp(27px, 5vw, 40px);
+  font-weight: 900;
+}
+
+.section-heading h2 span {
+  color: var(--red);
+}
+
+.section-heading p {
+  color: #999;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.players {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.player-card {
+  background: var(--gray);
+  border: 1px solid #303030;
+  overflow: hidden;
+  transition: .25s;
+}
+
+.player-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--red);
+  box-shadow: 0 12px 30px #e509141c;
+}
+
+.player-image {
+  height: 240px;
+  background: #202020;
+  overflow: hidden;
+}
+
+.player-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.player-info {
+  padding: 20px;
+  border-top: 2px solid var(--red);
+}
+
+.player-info small {
+  color: #ff454d;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.player-info h3 {
+  font-size: 24px;
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+
+.player-info p {
+  color: #999;
+  font-size: 13px;
+}
+
+.about {
+  max-width: none;
+  background: #141414;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 760px;
+  margin: auto;
+}
+
+.about p {
+  color: #bdbdbd;
+  margin-top: 15px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.stat {
+  padding: 20px 10px;
+  border: 1px solid #333;
+  background: #101010;
+}
+
+.stat strong {
+  display: block;
+  color: var(--red);
+  font-size: 25px;
+}
+
+.stat span {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: #aaa;
+  margin: 12px 0 25px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.socials a {
+  padding: 10px 18px;
+  border: 1px solid #444;
+  font-size: 13px;
+  transition: .2s;
+}
+
+.socials a:hover {
+  border-color: var(--red);
+  color: #ff454d;
+}
+
+footer {
+  padding: 25px 18px;
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+  border-top: 1px solid #292929;
+}
+
+footer span {
+  color: var(--red);
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    padding: 14px 10px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 510px;
+    padding: 70px 18px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  section {
+    padding: 60px 16px;
+  }
+
+  .players {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .player-image {
+    height: 190px;
+  }
+
+  .player-info {
+    padding: 13px;
+  }
+
+  .player-info h3 {
+    font-size: 19px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat {
+    padding: 15px 5px;
+  }
+
+  .stat strong {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .players {
+    grid-template-columns: 1fr;
+  }
+
+  .player-image {
+    height: 260px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+    <a class="logo" href="#home">ALLSTAR <span>UNITED</span></a>
+    <nav>
+      <a href="#home">TRANG CHỦ</a>
+      <a href="#roster">ĐỘI HÌNH</a>
+      <a href="#about">GIỚI THIỆU</a>
+      <a href="#contact">LIÊN HỆ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <div class="tag">EST. ESPORTS</div>
+      <h1>RISE TOGETHER.<br><span>WIN TOGETHER.</span></h1>
+      <p>ALLSTAR UNITED ESPORTS</p>
+      <a class="btn" href="#roster">XEM ĐỘI HÌNH ↗</a>
+    </div>
+  </div>
+
+  <section id="roster">
+    <div class="section-heading">
+      <h2>OUR <span>ROSTER</span></h2>
+      <p>Meet the players. Believe in the team.</p>
+    </div>
+
+    <div class="players">
+
+      <!-- ĐỔI LINK ẢNH VÀ TÊN TUYỂN THỦ TẠI ĐÂY -->
+
+      <article class="player-card">
+        <div class="player-image">
+          <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=700&q=80"
+          alt="Player PER" loading="lazy">
+        </div>
+        <div class="player-info">
+          <small>PLAYER / SNIPER</small>
+          <h3>ASU.PER</h3>
+          <p>ALLSTAR UNITED ESPORTS</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-image">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=700&q=80"
+          alt="Player KEN" loading="lazy">
+        </div>
+        <div class="player-info">
+          <small>PLAYER</small>
+          <h3>ASU.KEN</h3>
+          <p>ALLSTAR UNITED ESPORTS</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-image">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=80"
+          alt="Player MANJIRO" loading="lazy">
+        </div>
+        <div class="player-info">
+          <small>PLAYER</small>
+          <h3>ASU.MANJIRO</h3>
+          <p>ALLSTAR UNITED ESPORTS</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-image">
+          <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=700&q=80"
+          alt="Player HZE" loading="lazy">
+        </div>
+        <div class="player-info">
+          <small>PLAYER</small>
+          <h3>ASU.HZE</h3>
+          <p>ALLSTAR UNITED ESPORTS</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-image">
+          <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=700&q=80"
+          alt="Player NOTAR7" loading="lazy">
+        </div>
+        <div class="player-info">
+          <small>PLAYER</small>
+          <h3>ASU.NOTAR7</h3>
+          <p>ALLSTAR UNITED ESPORTS</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-image">
+          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=700&q=80"
+          alt="Player TIN" loading="lazy">
+        </div>
+        <div class="player-info">
+          <small>PLAYER</small>
+          <h3>ASU.TIN</h3>
+          <p>ALLSTAR UNITED ESPORTS</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="about" id="about">
+    <section>
+      <div class="about-content">
+        <div class="section-heading">
+          <h2>ABOUT <span>ALLSTAR</span></h2>
+          <p>One team. One dream. One family.</p>
+        </div>
+        <p>
+          ALLSTAR UNITED ESPORTS là nơi những tuyển thủ cùng nhau
+          rèn luyện, phát triển và chiến đấu vì mục tiêu chung.
+          Chúng tôi tin vào tinh thần đồng đội, kỷ luật và khát vọng chiến thắng.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <strong>UNITY</strong>
+            <span>TINH THẦN ĐỒNG ĐỘI</span>
+          </div>
+          <div class="stat">
+            <strong>PASSION</strong>
+            <span>ĐAM MÊ</span>
+          </div>
+          <div class="stat">
+            <strong>VICTORY</strong>
+            <span>CHIẾN THẮNG</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="section-heading">
+      <h2>CONTACT <span>US</span></h2>
+      <p>Follow our journey.</p>
+    </div>
+    <p>Kết nối với ALLSTAR UNITED ESPORTS qua các nền tảng.</p>
+    <div class="socials">
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TIKTOK ↗</a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">FACEBOOK ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 <span>ALLSTAR UNITED ESPORTS</span>. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
